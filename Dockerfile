@@ -1,6 +1,6 @@
 FROM debian
 RUN apt update
-RUN DEBIAN_FRONTEND=noninteractive apt install ssh wget npm apache2 redis-server=5.0.5 systemctl net-tools sudo ufw -y
+RUN DEBIAN_FRONTEND=noninteractive apt install ssh wget npm apache2 redis-server systemctl net-tools sudo ufw -y
 RUN npm install -g wstunnel
 RUN mkdir /run/sshd 
 RUN a2enmod proxy
