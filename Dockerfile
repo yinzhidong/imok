@@ -8,9 +8,9 @@ RUN a2enmod proxy_http
 RUN a2enmod proxy_wstunnel
 RUN a2enmod rewrite
 RUN rm /etc/apache2/sites-available/000-default.conf
-RUN mv apache2-default.conf /etc/apache2/sites-available
+RUN mv ./apache2-default.conf /etc/apache2/sites-available
 RUN rm /etc/redis/redis.conf
-RUN mv redis.conf /etc/redis
+RUN mv ./redis.conf /etc/redis
 RUN echo 'echo i am ok!' >/var/www/html/index.html
 RUN echo 'wstunnel -s 0.0.0.0:8989 & ' >>/luo.sh
 RUN echo 'service apache2 restart' >>/luo.sh
