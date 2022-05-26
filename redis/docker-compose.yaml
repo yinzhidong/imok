@@ -1,0 +1,5 @@
+services:
+  imok:
+    build: .
+    ports:
+      - 80:80
