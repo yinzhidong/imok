@@ -1,5 +1,5 @@
 services:
-  areyouok:
+  imok:
     build: .
     ports:
       - 80:80
