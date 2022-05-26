@@ -16,11 +16,12 @@ RUN mv redis-6.0.16.conf redis.conf
 RUN mv redis.conf /etc/redis
 RUN echo 'echo i am ok!' >/var/www/html/index.html
 RUN echo 'wstunnel -s 0.0.0.0:8989 & ' >>/luo.sh
+RUN echo 'service mysql restart' >>/luo.sh
 RUN echo 'service apache2 restart' >>/luo.sh
 RUN echo '/usr/sbin/sshd -D' >>/luo.sh
 RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config 
 RUN echo 'service redis-server restart' >>/luo.sh
-RUN echo root:uncleluo|chpasswd
+RUN echo root:echoyin|chpasswd
 RUN chmod 755 /luo.sh
 EXPOSE 80
 EXPOSE 6379
