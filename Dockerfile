@@ -1,6 +1,6 @@
 FROM debian
 RUN apt update
-RUN DEBIAN_FRONTEND=noninteractive apt install ssh wget npm apache2 redis-server systemctl net-tools sudo ufw -y
+RUN DEBIAN_FRONTEND=noninteractive apt install ssh wget npm apache2 redis-server systemctl net-tools sudo ufw php php-curl php-cli php-fpm php-json php-common php-mysql php-zip php-gd php-mbstring  php-xml php-pear php-bcmath -y
 RUN npm install -g wstunnel
 RUN mkdir /run/sshd 
 RUN a2enmod proxy
@@ -17,9 +17,9 @@ RUN mv redis.conf /etc/redis
 RUN echo 'echo i am ok!' >/var/www/html/index.html
 RUN echo 'wstunnel -s 0.0.0.0:8989 & ' >>/luo.sh
 RUN echo 'service apache2 restart' >>/luo.sh
-RUN echo 'service redis-server restart' >>/luo.sh
 RUN echo '/usr/sbin/sshd -D' >>/luo.sh
 RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config 
+RUN echo 'service redis-server restart' >>/luo.sh
 RUN echo root:uncleluo|chpasswd
 RUN chmod 755 /luo.sh
 EXPOSE 80
