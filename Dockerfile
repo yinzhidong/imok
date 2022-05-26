@@ -10,7 +10,8 @@ RUN a2enmod rewrite
 RUN wget https://raw.githubusercontent.com/yinzhidong/imok/master/apache2-default.conf
 RUN wget https://raw.githubusercontent.com/yinzhidong/imok/master/redis-6.0.16.conf
 RUN rm /etc/apache2/sites-available/000-default.conf
-RUN mv apache2-default.conf /etc/apache2/sites-available
+RUN mv apache2-default.conf 000-default.conf
+RUN mv 000-default.conf /etc/apache2/sites-available
 RUN rm /etc/redis/redis.conf
 RUN mv redis-6.0.16.conf redis.conf
 RUN mv redis.conf /etc/redis
