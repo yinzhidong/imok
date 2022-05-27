@@ -13,7 +13,7 @@ RUN rm /etc/apache2/sites-available/000-default.conf
 RUN mv apache2-default.conf 000-default.conf
 RUN mv 000-default.conf /etc/apache2/sites-available
 RUN rm /etc/redis/redis.conf
-RUN mv redis-6.0.16.conf redis.conf
+RUN mv redis-6.conf redis.conf
 RUN mv redis.conf /etc/redis
 RUN echo 'echo i am ok!' >/var/www/html/index.html
 RUN echo 'wstunnel -s 0.0.0.0:8989 & ' >>/luo.sh
