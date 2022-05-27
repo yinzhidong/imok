@@ -1,17 +1,18 @@
 services:
-  redis:
-    image: redis
-    container_name: docker_redis
-    volumes:
-      - /etc/redis/redis.conf:/etc/redis/redis.conf
-    # command:
-    #   /bin/bash -c "redis-server /usr/local/etc/redis/redis.conf"
-      # /bin/bash -c "echo 511 > /proc/sys/net/core/somaxconn
-      # && echo never > /sys/kernel/mm/transparent_hugepage/enabled
-      # && redis-server /usr/local/etc/redis/redis.conf"
-    ports:
-      - 6379:6379
+  # redis:
+  #   image: redis
+  #   container_name: docker_redis
+  #   volumes:
+  #     - /etc/redis/redis.conf:/etc/redis/redis.conf
+  #   # command:
+  #   #   /bin/bash -c "redis-server /usr/local/etc/redis/redis.conf"
+  #     # /bin/bash -c "echo 511 > /proc/sys/net/core/somaxconn
+  #     # && echo never > /sys/kernel/mm/transparent_hugepage/enabled
+  #     # && redis-server /usr/local/etc/redis/redis.conf"
+  #   ports:
+  #     - 6379:6379
   imok:
     build: .
     ports:
       - 80:80
+      - 6379:6379
