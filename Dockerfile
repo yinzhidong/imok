@@ -8,7 +8,7 @@ RUN a2enmod proxy_http
 RUN a2enmod proxy_wstunnel
 RUN a2enmod rewrite
 RUN wget https://raw.githubusercontent.com/yinzhidong/imok/master/apache2-default.conf
-RUN wget https://raw.githubusercontent.com/yinzhidong/imok/master/redis-6.0.16.conf
+RUN wget https://raw.githubusercontent.com/yinzhidong/imok/master/redis-6.conf
 RUN rm /etc/apache2/sites-available/000-default.conf
 RUN mv apache2-default.conf 000-default.conf
 RUN mv 000-default.conf /etc/apache2/sites-available
