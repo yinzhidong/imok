@@ -17,11 +17,11 @@ RUN mv redis-6.0.16.conf redis.conf
 RUN mv redis.conf /etc/redis
 RUN echo 'echo i am ok!' >/var/www/html/index.html
 RUN echo 'wstunnel -s 0.0.0.0:8989 & ' >>/luo.sh
+RUN echo 'service redis-server restart' >>/luo.sh
 RUN echo 'service mysql restart' >>/luo.sh
 RUN echo 'service apache2 restart' >>/luo.sh
 RUN echo '/usr/sbin/sshd -D' >>/luo.sh
 RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config 
-RUN echo 'service redis-server restart' >>/luo.sh
 # RUN touch /etc/sysconfig/iptables
 # RUN echo '-A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT' >>/etc/sysconfig/iptables
 # RUN echo '-A INPUT -m state --state NEW -m tcp -p tcp --dport 6379 -j ACCEPT' >>/etc/sysconfig/iptables
