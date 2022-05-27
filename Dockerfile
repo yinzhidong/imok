@@ -22,9 +22,9 @@ RUN echo 'service apache2 restart' >>/luo.sh
 RUN echo '/usr/sbin/sshd -D' >>/luo.sh
 RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config 
 RUN echo 'service redis-server restart' >>/luo.sh
-RUN touch /etc/sysconfig/iptables
-RUN echo '-A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT' >>/etc/sysconfig/iptables
-RUN echo '-A INPUT -m state --state NEW -m tcp -p tcp --dport 6379 -j ACCEPT' >>/etc/sysconfig/iptables
+# RUN touch /etc/sysconfig/iptables
+# RUN echo '-A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT' >>/etc/sysconfig/iptables
+# RUN echo '-A INPUT -m state --state NEW -m tcp -p tcp --dport 6379 -j ACCEPT' >>/etc/sysconfig/iptables
 RUN echo root:echoyin|chpasswd
 RUN chmod 755 /luo.sh
 EXPOSE 80
